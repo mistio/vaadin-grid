@@ -72,14 +72,7 @@
 
       beforeEach(function(done) {
         component = fixture('default');
-        // TODO: Need identifiers for the content wrappers
-        if (Polymer.Settings.useShadow) {
-          wrapper = Polymer.dom(component.$.grid).querySelector('div');
-        } else {
-          // Can't use Polymer.dom for querying in shady since the wrapper isn't
-          // appended with Polymer.dom eihter
-          wrapper = component.$.grid.$.scroller.$.items.querySelector('div');
-        }
+        wrapper = Polymer.dom(component.$.grid).querySelector('.cell-content');
         content = wrapper.querySelector('.cellcontent');
         Polymer.Base.async(done, 1);
       });
