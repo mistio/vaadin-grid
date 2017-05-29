@@ -269,10 +269,11 @@
       <style include="vaadin-grid-data-provider-themability-styles"></style>
 
       <div id="spinner"></div>
-      <div id="table" tabindex="-1" overflow-hidden$="[[_hideTableOverflow(scrollbarWidth, safari)]]">
+      <div id="table" tabindex="-1" overflow-hidden$="[[_hideTableOverflow(scrollbarWidth, safari)]]" style="outline-width: 0px !important; overflow: visible">
         <div id="sizerwrapper">
           <vaadin-grid-sizer id="fixedsizer" top="[[_estScrollHeight]]" column-tree="[[columnTree]]"></vaadin-grid-sizer>
         </div>
+        <slot name="actions"></slot>
         <slot name="header"></slot>
         <slot name="items"></slot>
         <slot name="footer"></slot>
