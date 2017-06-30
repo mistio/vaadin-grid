@@ -246,6 +246,9 @@ first element in the cell will be focused. You can override the behavior by appl
     <vaadin-grid-table id="scroller" loading$=[[_loading]] bind-data="[[_bindData]]" size="[[size]]" column-tree="[[_columnTree]]"
       row-details-template="[[_rowDetailsTemplate]]" column-reordering-allowed="[[columnReorderingAllowed]]">
       <vaadin-grid-table-header id="header" slot="header" target="[[_getContentTarget()]]" column-tree="[[_columnTree]]"></vaadin-grid-table-header>
+      <div style="position: fixed; width: 100%" slot="header">
+          <slot name="actions"></slot>
+      </div>
       <vaadin-grid-table-body id="items" slot="items"></vaadin-grid-table-body>
       <vaadin-grid-table-footer id="footer" slot="footer" target="[[_getContentTarget()]]" column-tree="[[_columnTree]]"></vaadin-grid-table-footer>
 
