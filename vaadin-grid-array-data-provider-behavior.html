@@ -85,11 +85,14 @@
     },
 
     _multiSort: function(a, b) {
+      var _this = this;
       return this._sorters.map(function(sort) {
+        var cmp = this._compare;
+        if (sort.cmp) cmp = sort.cmp;
         if (sort.direction === 'asc') {
-          return this._compare(Polymer.Base.get(sort.path, a), Polymer.Base.get(sort.path, b));
+          return cmp.bind(this)(Polymer.Base.get(sort.path, a), Polymer.Base.get(sort.path, b));
         } else if (sort.direction === 'desc') {
-          return this._compare(Polymer.Base.get(sort.path, b), Polymer.Base.get(sort.path, a));
+          return cmp.bind(this)(Polymer.Base.get(sort.path, b), Polymer.Base.get(sort.path, a));
         }
         return 0;
       }, this).reduce(function firstNonZeroValue(p, n) {
@@ -101,7 +104,9 @@
       if ([undefined, null].indexOf(value) >= 0) {
         return '';
       } else if (isNaN(value)) {
-        return value.toString();
+        return value.toString().toLowerCase();
+      } else if (value.toLowerCase) {
+        return value.toLowerCase();
       } else {
         return value;
       }
