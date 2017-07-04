@@ -90,9 +90,9 @@
         var cmp = this._compare;
         if (sort.cmp) cmp = sort.cmp;
         if (sort.direction === 'asc') {
-          return cmp.bind(this)(Polymer.Base.get(sort.path, a), Polymer.Base.get(sort.path, b));
+          return cmp.bind(this)(Polymer.Base.get(sort.path, a), Polymer.Base.get(sort.path, b), a, b);
         } else if (sort.direction === 'desc') {
-          return cmp.bind(this)(Polymer.Base.get(sort.path, b), Polymer.Base.get(sort.path, a));
+          return cmp.bind(this)(Polymer.Base.get(sort.path, b), Polymer.Base.get(sort.path, a), a, b);
         }
         return 0;
       }, this).reduce(function firstNonZeroValue(p, n) {
