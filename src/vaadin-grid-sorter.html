@@ -128,6 +128,10 @@ This program is available under Apache License Version 2.0, available at https:/
             _isConnected: {
               type: Boolean,
               value: false
+            },
+
+            cmp: {
+              type: Object
             }
           };
         }
@@ -135,7 +139,7 @@ This program is available under Apache License Version 2.0, available at https:/
         static get observers() {
           return [
             '_pathOrDirectionChanged(path, direction, _isConnected)',
-            '_directionOrOrderChanged(direction, _order)'
+            '_directionOrOrderChanged(direction, _order, cmp)'
           ];
         }
 

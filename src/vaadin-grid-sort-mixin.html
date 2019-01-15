@@ -98,7 +98,8 @@ This program is available under Apache License Version 2.0, available at https:/
       return this._sorters.map(sorter => {
         return {
           path: sorter.path,
-          direction: sorter.direction
+          direction: sorter.direction,
+          cmp: sorter.cmp
         };
       });
     }
