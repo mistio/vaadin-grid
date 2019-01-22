@@ -336,6 +336,11 @@ This program is available under Apache License Version 2.0, available at https:/
         this.parentElement._columnPropChanged('width');
       }
 
+      if (this._headerCell) {
+        this.dispatchEvent(new CustomEvent('column-width-changed', 
+          {bubbles: true, composed: true, detail: {width: width}} ));
+      }
+
       this._allCells.forEach(cell => cell.style.width = width);
     }
 
