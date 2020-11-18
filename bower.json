@@ -40,7 +40,21 @@
     "theme/material/vaadin-grid-sort-column.html",
     "theme/material/vaadin-grid-tree-toggle.html",
     "theme/material/vaadin-grid-tree-column.html",
-    "theme/material/all-imports.html"
+    "theme/material/all-imports.html",
+    "demo/grid-basic-demos.html",
+    "demo/grid-data-demos.html",
+    "demo/grid-selection-demos.html",
+    "demo/grid-columns-demos.html",
+    "demo/grid-sorting-demos.html",
+    "demo/grid-filtering-demos.html",
+    "demo/grid-row-details-demos.html",
+    "demo/grid-event-context-demos.html",
+    "demo/grid-tree-demos.html",
+    "demo/grid-drag-and-drop-demos.html",
+    "demo/grid-styling-demos.html",
+    "demo/grid-theme-demos.html",
+    "demo/grid-crud-demos.html",
+    "demo/grid-pagination-demos.html"
   ],
   "ignore": [
     "**/.*",
