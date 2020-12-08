@@ -3,7 +3,7 @@
 Copyright (c) 2017 Vaadin Ltd.
 This program is available under Apache License Version 2.0, available at https://vaadin.com/license/
 */
-import { Base as Base$0 } from '@polymer/polymer/polymer-legacy.js';
+import { Base } from '@polymer/polymer/polymer-legacy.js';
 
 /**
  * @polymerMixin
@@ -98,7 +98,7 @@ export const ArrayDataProviderMixin = superClass => class ArrayDataProviderMixin
       }
 
       const parentProperty = path.replace(/\.[^\.]*$/, ''); // a.b.c -> a.b
-      if (Base$0.get(parentProperty, items[0]) === undefined) {
+      if (Base.get(parentProperty, items[0]) === undefined) {
         console.warn(`Path "${path}" used for ${action} does not exist in all of the items, ${action} is disabled.`);
         result = false;
       }
@@ -168,7 +168,7 @@ export const ArrayDataProviderMixin = superClass => class ArrayDataProviderMixin
   _filter(items) {
     return items.filter((item, index) => {
       return this._filters.filter(filter => {
-        const value = this._normalizeEmptyValue(Base$0.get(filter.path, item));
+        const value = this._normalizeEmptyValue(Base.get(filter.path, item));
         const filterValueLowercase = this._normalizeEmptyValue(filter.value).toString().toLowerCase();
         return value.toString().toLowerCase().indexOf(filterValueLowercase) === -1;
       }).length === 0;
