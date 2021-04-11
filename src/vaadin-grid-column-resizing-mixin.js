@@ -74,8 +74,10 @@ export const ColumnResizingMixin = superClass => class ColumnResizingMixin exten
 
       if (e.detail.state === 'end') {
         this._toggleAttribute('column-resizing', false, this.$.scroller);
+        // We make this event to bubble up all the way to mist-list so we can save
+        // the new width of any resized column
         this.dispatchEvent(new CustomEvent('column-resize', {
-          detail: {resizedColumn: column}
+          detail: {resizedColumn: column, width: column.width}, bubbles: true, composed: true
         }));
       }
 
