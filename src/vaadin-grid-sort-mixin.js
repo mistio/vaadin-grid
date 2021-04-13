@@ -88,8 +88,8 @@ export const SortMixin = superClass => class SortMixin extends superClass {
         this._sorters = [sorter];
       }
     }
-
-    e.stopPropagation();
+    // We comment out this to listen to the even in mist-list and be able to save sort order
+    // e.stopPropagation();
 
     if (this.dataProvider &&
       // No need to clear cache if sorters didn't change
